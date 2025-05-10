@@ -15,5 +15,22 @@ services:
             - HOST=${DB_HOST}
             - USER=${DB_USER}
             - PASSWORD=${DB_PASSWORD}
+            - PGHOST=${DB_HOST}
+            - PGUSER=${DB_USER}
+            - PGPASSWORD=${DB_PASSWORD}
+            - PGPORT=${DB_PORT}
+            - PGSSLMODE=${DB_SSLMODE}
+            - ADMIN_PASSWD=${ADMIN_PASSWD}
+            - ADDONS_PATH=/mnt/addons,/mnt/custom_addons
+        command: [
+        "odoo",
+        "--db_host=${DB_HOST}",
+        "--db_user=${DB_USER}",
+        "--db_password=${DB_PASSWORD}",
+        "--db_port=${DB_PORT}",
+        "--db_sslmode=${DB_SSLMODE}",
+        "--admin_passwd=${ADMIN_PASSWD}",
+        "--addons-path=/mnt/addons,/mnt/custom_addons"
+        ]
         command: ['odoo', '--config=/etc/odoo/odoo.conf']
         restart: always

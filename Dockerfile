@@ -26,4 +26,4 @@ RUN /opt/venv/bin/pip install -v -r /tmp/requirements.txt
 ENV PATH="/opt/venv/bin:$PATH"
 ENV ADDONS_PATH="/mnt/addons,/mnt/custom_addons"
 
-CMD ["odoo", "--config=/etc/odoo/odoo.conf"]
+CMD ["odoo"]
