@@ -20,7 +20,7 @@ RUN /opt/venv/bin/pip install --upgrade pip
 
 COPY requirements.txt /tmp/
 
-RUN /opt/venv/bin/pip install -r /tmp/requirements.txt
+RUN /opt/venv/bin/pip install -v -r /tmp/requirements.txt
 
 ENV PATH="/opt/venv/bin:$PATH"
 ENV ADDONS_PATH="/mnt/addons,/mnt/custom_addons"
