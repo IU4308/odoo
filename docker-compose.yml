@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+    odoo:
+        build: .
+        container_name: odoo-app
+        ports:
+            - '8069:8069'
+        volumes:
+            - ./addons:/mnt/addons
+            - ./custom_addons:/mnt/custom_addons
+            - ./odoo.conf:/etc/odoo/odoo.conf
+            - ./data:/var/lib/odoo
+        environment:
+            - HOST=${DB_HOST}
+            - USER=${DB_USER}
+            - PASSWORD=${DB_PASSWORD}
+        command: ['odoo', '--config=/etc/odoo/odoo.conf']
+        restart: always
