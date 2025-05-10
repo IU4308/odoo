@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -y wget gnupg \
     && echo "deb http://apt.postgresql.org/pub/repos/apt $(grep VERSION_CODENAME /etc/os-release | cut -d= -f2)-pgdg main" > /etc/apt/sources.list.d/pgdg.list \
     && wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - \
     && apt-get update && apt-get install -y \
+    build-essential \
+    libsasl2-dev \
     python3-venv \
     libpq-dev
 
