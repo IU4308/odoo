@@ -26,6 +26,4 @@ RUN /opt/venv/bin/pip install -v -r /tmp/requirements.txt
 ENV PATH="/opt/venv/bin:$PATH"
 ENV ADDONS_PATH="/mnt/addons,/mnt/custom_addons"
 
-RUN echo "Supabase Host: $DB_HOST"
-
-CMD ["odoo"]
+CMD ["sh", "-c", "odoo --db_host=$DB_HOST --db_port=$DB_PORT --db_user=$DB_USER --db_password=$DB_PASSWORD --db_sslmode=$DB_SSLMODE --admin_passwd=$ADMIN_PASSWD --addons-path=$ADDONS_PATH"]
