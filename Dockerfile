@@ -3,14 +3,12 @@ FROM odoo:18
 USER root
 
 # Install PostgreSQL development libraries
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y wget gnupg \
+    && echo "deb http://apt.postgresql.org/pub/repos/apt $(grep VERSION_CODENAME /etc/os-release | cut -d= -f2)-pgdg main" > /etc/apt/sources.list.d/pgdg.list \
+    && wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - \
+    && apt-get update && apt-get install -y \
     python3-venv \
-    libpq-dev \
-    libsasl2-dev \
-    python-dev \
-    libssl-dev \
-    libldap2-dev \
-    build-essential
+    libpq-dev
 
 # Set up the virtual environment
 RUN python3 -m venv /opt/venv
