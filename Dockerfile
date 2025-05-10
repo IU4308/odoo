@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y wget gnupg \
     libsasl2-dev \
     libssl-dev \
     libldap2-dev \
+    python3-dev \
     python3-venv \
     libpq-dev
 
