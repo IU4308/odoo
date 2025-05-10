@@ -21,11 +21,11 @@ RUN /opt/venv/bin/pip install --upgrade pip
 
 COPY requirements.txt /tmp/
 
-RUN /opt/venv/bin/pip install -v -r /tmp/requirements.txt
+RUN /opt/venv/bin/pip install -r /tmp/requirements.txt
 
 ENV PATH="/opt/venv/bin:$PATH"
 COPY custom_addons /custom_addons
 
 USER odoo
 
-CMD ["sh", "-c", "odoo --db_host=$DB_HOST --db_port=$DB_PORT --db_user=$DB_USER --db_password=$DB_PASSWORD --db_sslmode=$DB_SSLMODE --addons-path=$ADDONS_PATH"]
+CMD ["sh", "-c", "odoo --db_host=$DB_HOST --db_port=$DB_PORT --db_user=$DB_USER --db_password=$DB_PASSWORD --db_name=$PGDATABASE --db_sslmode=$DB_SSLMODE --addons-path=$ADDONS_PATH"]
