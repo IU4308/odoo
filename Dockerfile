@@ -9,6 +9,8 @@ RUN apt-get update && apt-get install -y wget gnupg \
     && apt-get update && apt-get install -y \
     build-essential \
     libsasl2-dev \
+    libssl-dev \
+    libldap2-dev \
     python3-venv \
     libpq-dev
 
