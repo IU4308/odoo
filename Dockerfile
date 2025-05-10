@@ -26,4 +26,6 @@ RUN /opt/venv/bin/pip install -v -r /tmp/requirements.txt
 ENV PATH="/opt/venv/bin:$PATH"
 ENV ADDONS_PATH="/mnt/addons,/mnt/custom_addons"
 
+RUN echo "Supabase Host: $DB_HOST"
+
 CMD ["odoo"]
