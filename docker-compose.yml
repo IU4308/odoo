@@ -12,7 +12,7 @@ services:
             - ./odoo.conf:/etc/odoo/odoo.conf
             - ./data:/var/lib/odoo
         environment:
-            - HOST=${DB_HOST}
+            - HOST=aws-0-eu-central-1.pooler.supabase.com
             - USER=${DB_USER}
             - PASSWORD=${DB_PASSWORD}
             - PGHOST=${DB_HOST}
@@ -23,14 +23,14 @@ services:
             - ADMIN_PASSWD=${ADMIN_PASSWD}
             - ADDONS_PATH=/mnt/addons,/mnt/custom_addons
         command: [
-        "odoo",
-        "--db_host=${DB_HOST}",
-        "--db_user=${DB_USER}",
-        "--db_password=${DB_PASSWORD}",
-        "--db_port=${DB_PORT}",
-        "--db_sslmode=${DB_SSLMODE}",
-        "--admin_passwd=${ADMIN_PASSWD}",
-        "--addons-path=/mnt/addons,/mnt/custom_addons"
+            "odoo",
+            "--db_host=${DB_HOST}",
+            "--db_user=${DB_USER}",
+            "--db_password=${DB_PASSWORD}",
+            "--db_port=${DB_PORT}",
+            "--db_sslmode=${DB_SSLMODE}",
+            "--admin_passwd=${ADMIN_PASSWD}",
+            "--addons-path=/mnt/addons,/mnt/custom_addons"
         ]
         command: ['odoo', '--config=/etc/odoo/odoo.conf']
         restart: always
