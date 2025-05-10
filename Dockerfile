@@ -5,7 +5,6 @@ USER root
 # Install PostgreSQL development libraries
 RUN apt-get update && apt-get install -y \
     python3-venv \
-    libpq-dev  # Required for psycopg2
 
 # Set up the virtual environment
 RUN python3 -m venv /opt/venv
