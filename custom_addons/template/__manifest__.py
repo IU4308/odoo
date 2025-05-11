@@ -7,7 +7,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/import_template_wizard_view.xml',
-        'data/template_actions.xml',
+        'data_import/template_actions.xml',
         'views/template_form_views.xml',
         'views/template_menus.xml',
     ],  
