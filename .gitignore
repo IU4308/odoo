@@ -53,6 +53,8 @@ package.json
 /src/
 
 docker-compose.override.yml
+docker-compose.yml
+
 *.env
 
 venv/

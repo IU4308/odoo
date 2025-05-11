@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
     odoo:
-        build: .
+        image: odoo:18
         container_name: odoo-app
         ports:
             - '8069:8069'
@@ -12,8 +12,7 @@ services:
             - ./odoo.conf:/etc/odoo/odoo.conf
             - ./data:/var/lib/odoo
         environment:
-            - HOST=${DB_HOST}
-            - USER=${DB_USER}
-            - PASSWORD=${DB_PASSWORD}
-        command: ['odoo', '--config=/etc/odoo/odoo.conf']
-        restart: always
+            - HOST=127.0.0.1
+            - USER=odoo
+            - PASSWORD=admin123
+        command: ['odoo', '--config=/etc/odoo/odoo-locale.conf']

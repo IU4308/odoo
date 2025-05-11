@@ -1,4 +1,15 @@
 <odoo>
+    <record id="action_import_properties" model="ir.actions.server">
+        <field name="name">Import Properties</field>
+        <field name="model_id" ref="estate.model_estate_property"/>
+        <field name="state">code</field>
+        <field name="binding_model_id" ref="estate.model_estate_property"/>
+        <field name="binding_type">action</field>
+        <field name="code">
+            action = env['estate.property'].import_properties_from_api('your_api_token_here')
+        </field>
+    </record>
+
     <record id="estate_property_action" model="ir.actions.act_window">
         <field name="name">Properties</field>
         <field name="res_model">estate.property</field>
@@ -26,6 +37,9 @@
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
             <form string="My new house">
+                <header>
+                    <button name="%(action_import_properties)d" type="action" string="Import Properties" class="btn-primary"/>
+                </header>
                 <sheet>
                     <div class="oe_title">
                         <h1 class="mb32">
@@ -89,4 +103,6 @@
             </search>
         </field>
     </record>
+
+    
 </odoo>

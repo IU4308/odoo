@@ -1,0 +1,24 @@
+<odoo>
+    <record id="view_import_template_wizard" model="ir.ui.view">
+        <field name="name">template.import.wizard.form</field>
+        <field name="model">template.import.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Import Templates from API">
+                <group>
+                    <field name="unified_token"/>
+                </group>
+                <footer>
+                    <button string="Import" type="object" name="action_import" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_import_template_wizard" model="ir.actions.act_window">
+        <field name="name">Import Templates</field>
+        <field name="res_model">template.import.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

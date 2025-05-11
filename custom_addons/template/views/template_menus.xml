@@ -1,0 +1,12 @@
+<odoo>
+    <menuitem id="template_menu_root" name="Forms Builder">
+        <menuitem 
+            id="template_form_menu_action" 
+            action="template_form_action"
+        />
+        <menuitem 
+            id="menu_template_import"
+            action="action_import_template_wizard"
+        />
+    </menuitem>
+</odoo>
